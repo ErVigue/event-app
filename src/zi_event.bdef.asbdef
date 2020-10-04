@@ -1,0 +1,14 @@
+managed;
+
+define behavior for ZI_EVENT //alias <alias_name>
+persistent table zevent
+
+lock master
+{
+  field ( readonly, numbering : managed ) event_uuid;
+  field ( mandatory ) event_id, event_name;
+
+  create;
+  update;
+  delete;
+}
