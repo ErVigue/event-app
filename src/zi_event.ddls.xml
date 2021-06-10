@@ -5,7 +5,7 @@
    <DDLS>
     <DDLNAME>ZI_EVENT</DDLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>Event: Model View</DDTEXT>
+    <DDTEXT>Event: Interface View</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

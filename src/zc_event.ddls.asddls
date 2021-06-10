@@ -4,6 +4,7 @@
 @Search.searchable: true
 
 define root view entity ZC_EVENT
+  provider contract transactional_query
   as projection on ZI_EVENT
 {
       @UI.facet: [ { id:              'Event',

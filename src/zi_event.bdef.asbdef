@@ -1,14 +1,37 @@
-managed;
+managed implementation in class zbp_event unique;
+strict;
+with draft;
 
-define behavior for ZI_EVENT //alias <alias_name>
+define behavior for ZI_EVENT alias Event
 persistent table zevent
-
+draft table zevent_d
 lock master
+total etag last_changed_at
+authorization master(global)
 {
-  field ( readonly, numbering : managed ) event_uuid;
-  field ( mandatory ) event_id, event_name;
-
   create;
   update;
   delete;
+
+  field ( readonly, numbering : managed ) event_uuid;
+  field ( mandatory ) event_id, event_name;
+  field ( readonly ) last_changed_at;
+
+  draft action Activate;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zevent
+  {
+    event_uuid = event_uuid;
+    event_id = event_id;
+    event_name = event_name;
+    location = location;
+    is_online = is_online;
+    date_from = date_from;
+    date_to = date_to;
+    last_changed_at = last_changed_at;
+  }
 }

@@ -8,5 +8,8 @@ define root view entity ZI_EVENT
       location,
       is_online,
       date_from,
-      date_to
+      date_to,
+      //total ETag field
+      @Semantics.systemDateTime.lastChangedAt: true
+      last_changed_at
 }
