@@ -1,4 +1,10 @@
-CLASS zbp_event DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_event.
+class ZBP_EVENT definition
+  public
+  create private .
+
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
